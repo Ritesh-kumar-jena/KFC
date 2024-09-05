@@ -29,6 +29,8 @@ const userSchema = mongoose.Schema({
         enum: ["admin", "viewer"]
     }
 }, { versionKey: false });
+
+
 Menu Model
 
 const menuItemSchema = mongoose.Schema({
@@ -38,6 +40,8 @@ const menuItemSchema = mongoose.Schema({
     price: { type: Number, required: true },
     image: { type: String, required: true }
 }, { versionKey: false });
+
+
 Order Model
 
 const orderSchema = mongoose.Schema({
@@ -48,30 +52,39 @@ const orderSchema = mongoose.Schema({
     }],
     totalPrice: { type: Number, required: true }
 }, { versionKey: false });
+
+
 API Routes
+
 User Routes
 POST /user/signIn: Create a new user.
 POST /user/login: User login with phone number and password.
 GET /user/logout: Logout user and blacklist token.
 PATCH /user/edit/:id: Edit user details (authenticated).
 DELETE /user/delete/:id: Delete user (authenticated).
+
+
 Menu Routes
 POST /menu/addItem: Add a menu item (admin role).
 GET /menu/allItem: Get all menu items.
 PATCH /menu/editItems/:id: Edit menu item (admin role).
 DELETE /menu/deleteItems/:id: Delete menu item (admin role).
 GET /menu/searchItems: Search menu items by query.
+
+
 Order Routes
 POST /orders/addOrders: Place an order (authenticated).
 GET /orders/myOders: Get user's orders (authenticated).
 GET /orders/allOders: Get all orders.
 PATCH /orders/editOders/:id: Edit an order.
 DELETE /orders/deleteOders/:id: Delete an order.
+
 Middleware
 Authentication
 auth: Middleware to verify JWT tokens and ensure users are authenticated.
 userAuth: Middleware to validate the phone number during user signup.
 permissionAuth: Role-based access control middleware to ensure only authorized roles can access specific routes.
+
 Installation
 Clone the repository:
 
@@ -102,6 +115,8 @@ multer
 cloudinary
 dotenv
 cors
+
+
 Author
 Ritesh Kumar Jena - Full Stack Developer
 
