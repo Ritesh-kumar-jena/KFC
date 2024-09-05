@@ -1,4 +1,4 @@
-const dotenv=require("dotenv").config
+const dotenv=require("dotenv").config()
 const mongoose=require("mongoose")
 const jwt=require("jsonwebtoken")
 const { users, blackListing } = require("../Model/userModel")
